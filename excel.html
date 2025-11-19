@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Excel - JavaScript Assignment</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Excel Functions Calculator</h1>
+            <nav id="main-nav">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="excel.html">Excel Functions</a></li>
+                    <li><a href="geometry.html">Geometry Calculator</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <main id="output">
+            <h2>Excel-like Functions</h2>
+            <p class="instruction">Enter numbers separated by spaces (e.g., 5 10 15 20 25)</p>
+            
+            <form id="main-form" name="mainform">
+                <div class="form-group">
+                    <label for="numbers">Enter your numbers (space separated):*</label>
+                    <input type="text" id="numbers" name="numbers" placeholder="e.g., 10 20 30 40 50" required>
+                </div>
+
+                <div class="form-group">
+                    <label>Select Function:*</label>
+                    <div class="radio-group">
+                        <input type="radio" id="sum" name="excel" value="sum" checked>
+                        <label for="sum">AutoSum</label>
+                    </div>
+                    <div class="radio-group">
+                        <input type="radio" id="avg" name="excel" value="average">
+                        <label for="avg">Average</label>
+                    </div>
+                    <div class="radio-group">
+                        <input type="radio" id="max" name="excel" value="max">
+                        <label for="max">Maximum</label>
+                    </div>
+                    <div class="radio-group">
+                        <input type="radio" id="min" name="excel" value="min">
+                        <label for="min">Minimum</label>
+                    </div>
+                </div>
+
+                <div class="button-group">
+                    <button type="button" id="calculateBtn">Calculate</button>
+                    <button type="reset">Reset</button>
+                </div>
+
+                <div class="form-group result-group">
+                    <label for="result">Result:</label>
+                    <input type="text" id="result" name="result" readonly>
+                </div>
+            </form>
+
+            <div class="theme-switcher">
+                <button id="themeBtn" class="theme-btn">Switch to Light Theme</button>
+            </div>
+        </main>
+
+        <footer>
+            <p>ILAC & EFREI - HTML, CSS, and JavaScript Assignment</p>
+        </footer>
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

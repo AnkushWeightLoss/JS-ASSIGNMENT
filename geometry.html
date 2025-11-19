@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Geometry - JavaScript Assignment</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Basic Geometry Calculator</h1>
+            <nav id="main-nav">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="excel.html">Excel Functions</a></li>
+                    <li><a href="geometry.html">Geometry Calculator</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <main id="output">
+            <h2>Calculate Areas of Basic Shapes</h2>
+            <p class="instruction">Select a shape below to calculate its area</p>
+
+            <!-- Shape Selection Cards -->
+            <div class="shape-cards">
+                <div class="shape-card" onclick="showShape('circle')">
+                    <div class="shape-icon-large circle-shape"></div>
+                    <h3>Circle</h3>
+                    <p>Area = π × r²</p>
+                </div>
+                <div class="shape-card" onclick="showShape('triangle')">
+                    <div class="shape-icon-large triangle-shape"></div>
+                    <h3>Triangle</h3>
+                    <p>Area = ½ × b × h</p>
+                </div>
+                <div class="shape-card" onclick="showShape('square')">
+                    <div class="shape-icon-large square-shape"></div>
+                    <h3>Square</h3>
+                    <p>Area = a²</p>
+                </div>
+                <div class="shape-card" onclick="showShape('rectangle')">
+                    <div class="shape-icon-large rectangle-shape"></div>
+                    <h3>Rectangle</h3>
+                    <p>Area = w × h</p>
+                </div>
+            </div>
+
+            <!-- Circle Calculator -->
+            <div id="circle-section" class="geometry-section" style="display: none;">
+                <h3>🔵 Circle Area Calculator</h3>
+                <form class="geometry-form">
+                    <div class="form-group">
+                        <label for="circle-radius">Enter the radius (r):*</label>
+                        <input type="text" id="circle-radius" placeholder="e.g., 5">
+                    </div>
+                    <div class="button-group">
+                        <button type="button" onclick="calculateCircle()">Calculate</button>
+                        <button type="button" onclick="hideAllShapes()">Back</button>
+                    </div>
+                    <div class="form-group result-group">
+                        <label for="circle-result">Area Result:</label>
+                        <input type="text" id="circle-result" readonly>
+                    </div>
+                </form>
+            </div>
+
+            <!-- Triangle Calculator -->
+            <div id="triangle-section" class="geometry-section" style="display: none;">
+                <h3>🔺 Triangle Area Calculator</h3>
+                <form class="geometry-form">
+                    <div class="form-group">
+                        <label for="triangle-base">Enter the base (b):*</label>
+                        <input type="text" id="triangle-base" placeholder="e.g., 8">
+                    </div>
+                    <div class="form-group">
+                        <label for="triangle-height">Enter the height (h):*</label>
+                        <input type="text" id="triangle-height" placeholder="e.g., 6">
+                    </div>
+                    <div class="button-group">
+                        <button type="button" onclick="calculateTriangle()">Calculate</button>
+                        <button type="button" onclick="hideAllShapes()">Back</button>
+                    </div>
+                    <div class="form-group result-group">
+                        <label for="triangle-result">Area Result:</label>
+                        <input type="text" id="triangle-result" readonly>
+                    </div>
+                </form>
+            </div>
+
+            <!-- Square Calculator -->
+            <div id="square-section" class="geometry-section" style="display: none;">
+                <h3>🟦 Square Area Calculator</h3>
+                <form class="geometry-form">
+                    <div class="form-group">
+                        <label for="square-side">Enter the side length (a):*</label>
+                        <input type="text" id="square-side" placeholder="e.g., 7">
+                    </div>
+                    <div class="button-group">
+                        <button type="button" onclick="calculateSquare()">Calculate</button>
+                        <button type="button" onclick="hideAllShapes()">Back</button>
+                    </div>
+                    <div class="form-group result-group">
+                        <label for="square-result">Area Result:</label>
+                        <input type="text" id="square-result" readonly>
+                    </div>
+                </form>
+            </div>
+
+            <!-- Rectangle Calculator -->
+            <div id="rectangle-section" class="geometry-section" style="display: none;">
+                <h3>🟪 Rectangle Area Calculator</h3>
+                <form class="geometry-form">
+                    <div class="form-group">
+                        <label for="rectangle-width">Enter the width (w):*</label>
+                        <input type="text" id="rectangle-width" placeholder="e.g., 10">
+                    </div>
+                    <div class="form-group">
+                        <label for="rectangle-height">Enter the height (h):*</label>
+                        <input type="text" id="rectangle-height" placeholder="e.g., 4">
+                    </div>
+                    <div class="button-group">
+                        <button type="button" onclick="calculateRectangle()">Calculate</button>
+                        <button type="button" onclick="hideAllShapes()">Back</button>
+                    </div>
+                    <div class="form-group result-group">
+                        <label for="rectangle-result">Area Result:</label>
+                        <input type="text" id="rectangle-result" readonly>
+                    </div>
+                </form>
+            </div>
+
+            <div class="theme-switcher">
+                <button id="themeBtn" class="theme-btn">Switch to Light Theme</button>
+            </div>
+        </main>
+
+        <footer>
+            <p>ILAC & EFREI - HTML, CSS, and JavaScript Assignment</p>
+        </footer>
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
